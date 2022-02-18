@@ -1,0 +1,36 @@
+.tool-time{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+.tool-time > .time-result{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    width:100px;
+    height:100px;
+    background-color:rgb(255, 255, 255);
+    border-radius:50%;
+}
+.tool-time > div > button{
+    border:0px;
+    padding:7px 15px;
+    margin:10px;
+    border-radius:5px;
+}
+.tool-time > div > button:active{
+    background-color: rgb(0, 59, 114);
+}
+.tool-time > input{
+    border-radius: 5px;
+    text-align: center;
+    width: 100px;
+    font-size:25px;
+    margin-bottom: 20px;
+}
+.btn-normal-1{
+    background-color:rgb(7, 156, 255);
+}
+.btn-clear-1{
+    background-color:rgb(255, 44, 7);
+}
