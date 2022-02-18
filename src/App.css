@@ -84,7 +84,6 @@ footer{
   border:0px;
   background:none;
   margin: 5px;
-  border-radius:50%;
   width:30px;
   height:30px;
   border-radius:50%;
@@ -126,6 +125,50 @@ footer{
   animation-duration: 2s;
   cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+
+.btn-goto-list{
+  border:0px;
+  background:none;
+  margin: 0px;
+  width:50px;
+  display:none;
+  justify-content:center;
+}
+.btn-goto-list > *{
+  align-self: center;
+  width:100%;
+}
+.dropdown-list{
+  position:fixed;
+  top:60px;
+  left:0;
+  width:50vw;
+  background-color: rgb(233, 249, 255);
+  box-shadow: 1px 1px 1px 1px rgb(190, 190, 190);
+  border-radius: 3px;
+}
+.dropdown-list > *{
+  text-align: center;
+  text-decoration: none;
+  display:block;
+  padding:5px;
+  min-width:150px;
+  margin:5px;
+  border-radius: 3px;
+  color:rgb(0, 0, 0);
+}
+.dropdown-list > button:hover{
+  background-color:rgb(204, 204, 204);
+}
 /* 
 @keyframes App-logo-spin {
   from {
@@ -142,3 +185,18 @@ footer{
 }
 
 */
+
+@media screen and (max-width: 480px){
+  .App-header-desktop{
+    display: none;
+  }
+  .App-header{
+    height:60px;
+  }
+  .right-header > a{
+    padding: 5px;
+  }
+  .btn-goto-list{
+    display:flex;
+  }
+}

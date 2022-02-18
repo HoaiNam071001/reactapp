@@ -44,10 +44,23 @@ function App() {
     }
   },[dpl])
 
+  const [menu,setmenu] = useState('none');  
+  const [bgrmenu,setbgrmenu] = useState('rgb(235, 235, 235)');
+  useEffect(()=>{
+    setbgrmenu(menu==='block'?'rgb(134, 138, 139)':'rgb(235, 235, 235)');
+    if(menu==='block'){
+      const myListenermenu = ()=>{
+        setmenu('none');
+        window.removeEventListener('click',myListenermenu)
+      }
+      window.addEventListener('click',myListenermenu) 
+    }
+  },[menu])
+
   return (
     <React.Fragment>
       <header className="App-header">
-        <ul>
+        <ul className="App-header-desktop">
           <li>
             <Link to="/">HOME</Link>
           </li>
@@ -55,6 +68,13 @@ function App() {
             <Link to="/tool">TOOL</Link>
           </li>          
         </ul>
+        <button style={{background:bgrmenu}} onClick={()=>setmenu(menu==='none'?'block':'none')}  className="btn-goto-list">
+            <img  src={require('./asset/icon/list.svg').default} alt="list"/>
+            <div style={{display:menu}} className="dropdown-list">
+              <Link to="/">HOME</Link>
+              <Link to="/tool">TOOL</Link>
+            </div>
+          </button>
         <div className="right-header">
           {/* <div className="form-check form-switch">
             <label htmlFor="ThemeSwitchCheckChecked">{theme===0?'Light':'Dark'}</label>
@@ -63,7 +83,7 @@ function App() {
           <Link to="/login"><p>Login</p></Link>
           <Link to="/register"><p>Sign up</p></Link>
           <button style={{background:bgrdrop}} onClick={()=>setdpl(dpl==='none'?'block':'none')} className="btn-goto-profile">
-            <img  src={require('./asset/icon/caret-down.svg').default} alt="arow"/>
+            <img  src={require('./asset/icon/caret-down.svg').default} alt="arrow"/>
             <div style={{display:dpl}} className="dropdown-profiles">
               <Link to="/profile">Profile</Link>
               <Link to="/login">Log out</Link>
