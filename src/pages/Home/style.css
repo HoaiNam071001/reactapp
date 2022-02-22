@@ -1,6 +1,15 @@
 .main-home{
     display:flex;
-    margin:30px;
+    align-content:center;
     align-items: center;
     flex-direction: column;
+}
+.main-home > iframe{
+    width:100%;
+}
+
+@media screen and (max-width: 992px){
+    .main-home > iframe{
+        height:50vw;
+    }
 }
